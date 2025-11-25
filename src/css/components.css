@@ -1,0 +1,108 @@
+.container {
+  width: 100%;
+  padding-inline: 15px;
+  margin-inline: auto;
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+  @media (min-width: 1400px) {
+    max-width: 1320px;
+  }
+}
+
+/* ======================================== */
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-4);
+  border: none;
+  cursor: pointer;
+}
+
+.btn--secondary {
+  background: var(--c-secondary-1);
+  color: var(--c-primary-1);
+  &:hover {
+    background-color: var(--c-secondary-2);
+  }
+}
+.btn--danger {
+  background: var(--c-danger-1);
+  color: var(--c-primary-1);
+  &:hover {
+    background-color: var(--c-danger-2);
+  }
+}
+
+/* ======================================== */
+.input,
+.select {
+  padding: 0.5rem;
+  border: var(--border-light);
+  border-radius: var(--border-radius-4);
+  width: 100%;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+}
+.input--secondary:focus,
+.select--secondary:focus {
+  border-color: var(--c-secondary-1);
+  box-shadow: 0 0 0 2px rgba(40, 127, 209, 0.2);
+}
+.input--danger {
+  border-color: var(--c-danger-1);
+}
+/* ======================================== */
+
+.form-label {
+  font-size: var(--fs-12);
+  font-weight: 700;
+  color: var(--c-primary-2);
+}
+/* ======================================== */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: var(--border-radius-4);
+  overflow: hidden;
+  text-align: start;
+  th,
+  td {
+    padding: 0.75rem 1rem;
+    border-bottom: var(--border-light);
+    text-align: start;
+  }
+}
+.table--secondary {
+  thead {
+    background: var(--c-secondary-1);
+    color: var(--c-primary-1);
+  }
+  tbody tr:hover {
+    background-color: var(--c-secondary-3);
+  }
+  tbody tr.highlight {
+    background-image: linear-gradient(
+      to right,
+      var(--c-danger-1),
+      var(--c-primary-1),
+      var(--c-primary-1)
+    );
+  }
+  tfoot {
+    color: var(--c-primary-1);
+    background-color: var(--c-primary-2);
+  }
+}
