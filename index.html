@@ -12,6 +12,107 @@
     <link rel="stylesheet" href="./src/css/main.css" />
   </head>
   <body>
+    <div class="container">
+      <header id="header">
+        <h1>Expense Tracker</h1>
+      </header>
+      <section id="expense">
+        <form id="expense-form">
+          <div class="form-control">
+            <label for="title" class="form-label">Expense Title</label>
+            <input
+              class="input input--secondary"
+              id="title"
+              name="title"
+              type="text"
+              placeholder="e.g. Grocery Shopping"
+            />
+            <p class="feedback"></p>
+          </div>
+          <div class="form-control">
+            <label for="amount" class="form-label">Amount ($)</label>
+            <input
+              class="input input--secondary"
+              id="amount"
+              name="amount"
+              type="number"
+              placeholder="Amount"
+              min="0"
+              step="0.01"
+            />
+            <p class="feedback"></p>
+          </div>
+          <div class="form-control">
+            <label for="category" class="form-label">Category</label>
+            <select
+              class="select select--secondary"
+              name="category"
+              id="category"
+            >
+              <option value="">Select Category</option>
+              <option value="housing">Housing</option>
+              <option value="transportation">Transportation</option>
+              <option value="utilities">Utilities</option>
+              <option value="insurance">Insurance</option>
+              <option value="food">Food</option>
+            </select>
+            <p class="feedback"></p>
+          </div>
+          <div class="form-control">
+            <label for="date" class="form-label">Date</label>
+            <input
+              class="input input--secondary"
+              type="date"
+              name="date"
+              id="date"
+            />
+            <p class="feedback"></p>
+          </div>
+          <button type="submit" class="btn btn--secondary">Add Expense</button>
+        </form>
+        <table id="expense-table" class="table table--secondary">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>$ Amount</th>
+              <th>Category</th>
+              <th>Date</th>
+              <th width="50px"></th>
+            </tr>
+          </thead>
+          <tbody id="expense-table__body"></tbody>
+          <tfoot>
+            <tr>
+              <td><strong>Total:</strong></td>
+              <td id="total-amount">$0</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <section id="filter">
+        <label for="filter-category" class="filter-label"
+          >Filter by Category:</label
+        >
+        <select
+          class="select select--primary"
+          name="filter-category"
+          id="filter-category"
+        >
+          <option value="">All</option>
+          <option value="housing">Housing</option>
+          <option value="transportation">Transportation</option>
+          <option value="utilities">Utilities</option>
+          <option value="insurance">Insurance</option>
+          <option value="food">Food</option>
+        </select>
+      </section>
+    </div>
+    <footer id="footer">
+      <p>&copy; Expense Tracker</p>
+    </footer>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>
