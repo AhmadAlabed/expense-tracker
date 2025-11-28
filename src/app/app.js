@@ -4,9 +4,16 @@ import { createExpense, calculateTotalAmount } from "../core/expense/model.js";
 import { attachTableEvents } from "../ui/table/events.js";
 import { createFormController } from "../ui/form/controller.js";
 import { createCategoryFilter } from "../ui/filter/category.js";
-
+import {
+  formCategories,
+  filterCategories,
+} from "../core/expense/categories.js";
+import { populateSelect } from "../ui/form/populateSelect.js";
+import { populateFilterSelect } from "../ui/filter/populateSelect.js";
 export function init(form, tbody, totalAmountEl, categorySelect) {
   const expenses = expensesState([]);
+  populateSelect(form.category, formCategories);
+  populateFilterSelect(categorySelect, filterCategories);
   let currentCategory = "";
   updateUI();
   attachTableEvents(tbody, (id) => {
